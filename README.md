@@ -8,6 +8,21 @@ Allow playing (and recording) audio in a busybox based ramdisk (or any other sma
 
 As opposed to the other repos, the build script comments and this README.md file are not updated or detailed.
 
+## Building
+You can speficy the `TUPLES` and `MORE_TUPLES` variables to specify your build tuples, or otherwise modify the code. You can provide `dontfetch` to avoid cloning the tool from git if you already built it at least once.
+```bash
+./build-tinyalsa.sh
+```
+
+## Build status
+Known to build properly:
+```
+x86_64-linux-gnu aarch64-linux-gnu riscv64-linux-gnu arm-linux-gnueabi arm-linux-gnueabihf i686-linux-gnu loongarch64-linux-gnu
+alpha-linux-gnu arc-linux-gnu m68k-linux-gnu mips64-linux-gnuabi64 mips64el-linux-gnuabi64 mips-linux-gnu mipsel-linux-gnu powerpc-linux-gnu powerpc64-linux-gnu powerpc64le-linux-gnu sh4-linux-gnu sparc64-linux-gnu s390x-linux-gnu
+```
+
+Known to not build properly:\
+None at the moment
 
 ## Usage (very superficial)
 You must have direct hardware access, and you must be aware that there is no hwplug so what the hardware supports, is what is supported. You could use `sox` to reencode,
